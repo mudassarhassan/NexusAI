@@ -2,9 +2,15 @@ SolutionComponents:
   Component:
   - '@path': /appmodules/nxa_NexusAI
   - '@path': /appmodulesitemaps/nxa_NexusAI
+  - '@path': /dvtablesearchentities/46ae2ba8-18bf-f111-aaac-002248d9e8dc
+  - '@path': /dvtablesearchentities/76f6b5de-12bf-f111-aaac-002248d9e8dc
+  - '@path': /dvtablesearchentities/79a4eba8-16bf-f111-aaac-e4fade0ee24e
   - '@path': /dvtablesearchentities/89b16199-efbe-f111-aaac-002248d9e8dc
+  - '@path': /dvtablesearchentities/b30034e5-12bf-f111-aaac-002248d9e8dc
+  - '@path': /dvtablesearchentities/b60034e5-12bf-f111-aaac-002248d9e8dc
   - '@path': /dvtablesearchentities/d419236e-eebe-f111-aaac-002248d9e8dc
   - '@path': /dvtablesearchentities/d519236e-eebe-f111-aaac-002248d9e8dc
+  - '@path': /dvtablesearchentities/ee0034e5-12bf-f111-aaac-002248d9e8dc
   - '@path': /dvtablesearchs/d319236e-eebe-f111-aaac-002248d9e8dc
   - '@path': /entities/account
   - '@path': /entities/account/ribbondiffs
@@ -213,19 +219,61 @@ SolutionComponents:
   - '@path': /entities/nxa_product/savedqueries/b6bf656b-10bf-f111-aaaf-0022487285c5
   - '@path': /entities/nxa_product/savedqueries/c8328037-d506-4583-994a-ddf5054ab647
   - '@path': /entities/nxa_product/savedqueries/e7b20c2a-e894-4b42-9316-a691ca877814
+  - '@path': /entities/nxa_productholding
+  - '@path': /entities/nxa_productholding/attributes/createdby.yml
+  - '@path': /entities/nxa_productholding/attributes/createdon.yml
+  - '@path': /entities/nxa_productholding/attributes/createdonbehalfby.yml
+  - '@path': /entities/nxa_productholding/attributes/importsequencenumber.yml
+  - '@path': /entities/nxa_productholding/attributes/modifiedby.yml
+  - '@path': /entities/nxa_productholding/attributes/modifiedon.yml
+  - '@path': /entities/nxa_productholding/attributes/modifiedonbehalfby.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_accountid.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_balance.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_contactid.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_enddate.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_holdingnumber.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_interestrate.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_name.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_productholdingid.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_productid.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_startdate.yml
+  - '@path': /entities/nxa_productholding/attributes/nxa_status.yml
+  - '@path': /entities/nxa_productholding/attributes/overriddencreatedon.yml
+  - '@path': /entities/nxa_productholding/attributes/ownerid.yml
+  - '@path': /entities/nxa_productholding/attributes/owningbusinessunit.yml
+  - '@path': /entities/nxa_productholding/attributes/owningteam.yml
+  - '@path': /entities/nxa_productholding/attributes/owninguser.yml
+  - '@path': /entities/nxa_productholding/attributes/statecode.yml
+  - '@path': /entities/nxa_productholding/attributes/statuscode.yml
+  - '@path': /entities/nxa_productholding/attributes/timezoneruleversionnumber.yml
+  - '@path': /entities/nxa_productholding/attributes/utcconversiontimezonecode.yml
+  - '@path': /entities/nxa_productholding/formxml/card/2dd42e8d-d036-41e4-8a90-1fd17e2840c0
+  - '@path': /entities/nxa_productholding/formxml/main/8ac36869-0d11-4e97-ac02-c9cdf85318be
+  - '@path': /entities/nxa_productholding/formxml/quick/0e5dbca2-7a4a-4504-af36-e438fdc9637f
+  - '@path': /entities/nxa_productholding/ribbondiffs
+  - '@path': /entities/nxa_productholding/savedqueries/0fa912a6-ad4a-4d67-9a29-93feb32e098b
+  - '@path': /entities/nxa_productholding/savedqueries/2bb4907b-2ede-422e-9bba-65bda7781b31
+  - '@path': /entities/nxa_productholding/savedqueries/3018f2ef-e5c1-4b01-94ce-fc72d056e032
+  - '@path': /entities/nxa_productholding/savedqueries/6df2dd91-b47c-44ee-9382-3666f43f1be2
+  - '@path': /entities/nxa_productholding/savedqueries/6e515544-18bf-f111-aaaf-0022487285c5
+  - '@path': /entities/nxa_productholding/savedqueries/aff3130e-8a9c-4527-9448-00f55ef617d9
+  - '@path': /entities/nxa_productholding/savedqueries/c3cc1d9e-d0fb-49f0-a826-6b0d563cb032
   - '@path': /entityrelationships/account_nxa_aiactionlog_nxa_accountid
   - '@path': /entityrelationships/account_nxa_airecommendation_nxa_accountid
   - '@path': /entityrelationships/account_nxa_lead_nxa_accountid
   - '@path': /entityrelationships/account_nxa_opportunity_nxa_accountid
+  - '@path': /entityrelationships/account_nxa_productholding_nxa_accountid
   - '@path': /entityrelationships/business_unit_nxa_aiactionlog
   - '@path': /entityrelationships/business_unit_nxa_airecommendation
   - '@path': /entityrelationships/business_unit_nxa_lead
   - '@path': /entityrelationships/business_unit_nxa_opportunity
   - '@path': /entityrelationships/business_unit_nxa_product
+  - '@path': /entityrelationships/business_unit_nxa_productholding
   - '@path': /entityrelationships/contact_nxa_aiactionlog_nxa_contactid
   - '@path': /entityrelationships/contact_nxa_airecommendation_nxa_contactid
   - '@path': /entityrelationships/contact_nxa_lead_nxa_contactid
   - '@path': /entityrelationships/contact_nxa_opportunity_nxa_contactid
+  - '@path': /entityrelationships/contact_nxa_productholding_nxa_contactid
   - '@path': /entityrelationships/lk_nxa_aiactionlog_createdby
   - '@path': /entityrelationships/lk_nxa_aiactionlog_modifiedby
   - '@path': /entityrelationships/lk_nxa_airecommendation_createdby
@@ -236,6 +284,8 @@ SolutionComponents:
   - '@path': /entityrelationships/lk_nxa_opportunity_modifiedby
   - '@path': /entityrelationships/lk_nxa_product_createdby
   - '@path': /entityrelationships/lk_nxa_product_modifiedby
+  - '@path': /entityrelationships/lk_nxa_productholding_createdby
+  - '@path': /entityrelationships/lk_nxa_productholding_modifiedby
   - '@path': /entityrelationships/nxa_lead_nxa_aiactionlog_nxa_leadid
   - '@path': /entityrelationships/nxa_lead_nxa_airecommendation_nxa_leadid
   - '@path': /entityrelationships/nxa_lead_nxa_opportunity_nxa_leadid
@@ -243,19 +293,23 @@ SolutionComponents:
   - '@path': /entityrelationships/nxa_opportunity_nxa_airecommendation_nxa_opportunityid
   - '@path': /entityrelationships/nxa_product_nxa_airecommendation_nxa_productid
   - '@path': /entityrelationships/nxa_product_nxa_product_nxa_parentproductid
+  - '@path': /entityrelationships/nxa_product_nxa_productholding_nxa_productid
   - '@path': /entityrelationships/owner_nxa_aiactionlog
   - '@path': /entityrelationships/owner_nxa_airecommendation
   - '@path': /entityrelationships/owner_nxa_lead
   - '@path': /entityrelationships/owner_nxa_opportunity
   - '@path': /entityrelationships/owner_nxa_product
+  - '@path': /entityrelationships/owner_nxa_productholding
   - '@path': /entityrelationships/team_nxa_aiactionlog
   - '@path': /entityrelationships/team_nxa_airecommendation
   - '@path': /entityrelationships/team_nxa_lead
   - '@path': /entityrelationships/team_nxa_opportunity
   - '@path': /entityrelationships/team_nxa_product
+  - '@path': /entityrelationships/team_nxa_productholding
   - '@path': /entityrelationships/user_nxa_aiactionlog
   - '@path': /entityrelationships/user_nxa_airecommendation
   - '@path': /entityrelationships/user_nxa_lead
   - '@path': /entityrelationships/user_nxa_opportunity
   - '@path': /entityrelationships/user_nxa_product
+  - '@path': /entityrelationships/user_nxa_productholding
   - '@path': /publishers/NexusAI

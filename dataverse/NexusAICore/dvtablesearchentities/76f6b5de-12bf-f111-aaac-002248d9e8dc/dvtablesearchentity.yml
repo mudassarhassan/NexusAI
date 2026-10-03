@@ -1,0 +1,8 @@
+dvtablesearchentity:
+  '@dvtablesearchentityid': 76f6b5de-12bf-f111-aaac-002248d9e8dc
+  dvtablesearch:
+    dvtablesearchid: d319236e-eebe-f111-aaac-002248d9e8dc
+  entitylogicalname: nxa_airecommendation
+  iscustomizable: 1
+  statecode: 0
+  statuscode: 1

@@ -1,5 +1,5 @@
 systemform:
-  formid: '{22c3ef5b-9d69-4a63-9ebb-ca675bfab025}'
+  formid: '{8ac36869-0d11-4e97-ac02-c9cdf85318be}'
   IntroducedVersion: 1.0
   FormPresentation: 1
   FormActivationState: 1
@@ -8,7 +8,7 @@ systemform:
     tabs:
       tab:
         '@verticallayout': true
-        '@id': '{aa495775-20cc-49f5-8717-0d1b4a8e3505}'
+        '@id': '{ba362670-2701-4933-acbe-0068983a1ed0}'
         '@IsUserDefined': 1
         labels:
           label:
@@ -22,7 +22,7 @@ systemform:
                 '@showlabel': false
                 '@showbar': false
                 '@IsUserDefined': 0
-                '@id': '{98ae9af5-6024-4202-a214-390222b3da95}'
+                '@id': '{49671faf-c8c4-47e0-b8de-bcbe6adfff4e}'
                 labels:
                   label:
                     '@description': General
@@ -30,17 +30,17 @@ systemform:
                 rows:
                   row:
                   - cell:
-                      '@id': '{c401b66b-9834-44f3-80d8-64c2e1c5a8c0}'
+                      '@id': '{73b466ef-3eea-411f-9f34-f4fca3ec7ec7}'
                       labels:
                         label:
-                          '@description': Action Name
+                          '@description': Holding Name
                           '@languagecode': 1033
                       control:
                         '@id': nxa_name
                         '@classid': '{4273EDBD-AC1D-40d3-9FB2-095C621B552D}'
                         '@datafieldname': nxa_name
                   - cell:
-                      '@id': '{ff6deee6-8827-461e-94bf-2f00e436405a}'
+                      '@id': '{23d6a94d-acd4-4f0c-922a-5ab7818d8922}'
                       labels:
                         label:
                           '@description': Owner
@@ -50,7 +50,7 @@ systemform:
                         '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
                         '@datafieldname': ownerid
                   - cell:
-                      '@id': '{88b154bc-a083-44a1-8127-0a9cfa16dc51}'
+                      '@id': '{d37e4ec3-cb36-486e-92a1-a79cf0092dba}'
                       '@locklevel': 0
                       '@colspan': 1
                       '@rowspan': 1
@@ -64,7 +64,7 @@ systemform:
                         '@datafieldname': nxa_accountid
                         '@disabled': false
                   - cell:
-                      '@id': '{74110180-d52b-4ae8-af6b-71612ed5ca92}'
+                      '@id': '{eb7377a7-661e-468d-8a94-f7912ab4926a}'
                       '@locklevel': 0
                       '@colspan': 1
                       '@rowspan': 1
@@ -78,161 +78,63 @@ systemform:
                         '@datafieldname': nxa_contactid
                         '@disabled': false
                   - cell:
-                      '@id': '{aeb4e74a-47b0-4cc0-be02-745fda98c303}'
+                      '@id': '{27cdcda5-b200-4741-86f3-a145212bfe3a}'
                       '@locklevel': 0
                       '@colspan': 1
                       '@rowspan': 1
                       labels:
                         label:
-                          '@description': Action Type
+                          '@description': Balance
                           '@languagecode': 1033
                       control:
-                        '@id': nxa_actiontype
-                        '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
-                        '@datafieldname': nxa_actiontype
+                        '@id': nxa_balance
+                        '@classid': '{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}'
+                        '@datafieldname': nxa_balance
                         '@disabled': false
                   - cell:
-                      '@id': '{b522a4be-b87e-47b5-a872-200269c2fcd2}'
+                      '@id': '{ce46ff05-231a-451f-b39f-ac3740f6c83f}'
                       '@locklevel': 0
                       '@colspan': 1
                       '@rowspan': 1
                       labels:
                         label:
-                          '@description': Agent
+                          '@description': Holding Number
                           '@languagecode': 1033
                       control:
-                        '@id': nxa_agent
+                        '@id': nxa_holdingnumber
                         '@classid': '{4273EDBD-AC1D-40D3-9FB2-095C621B552D}'
-                        '@datafieldname': nxa_agent
+                        '@datafieldname': nxa_holdingnumber
                         '@disabled': false
                   - cell:
-                      '@id': '{c01fbd99-09a7-481c-817b-8daadef73045}'
+                      '@id': '{23dbd856-b71f-4415-a10f-140a3c382475}'
                       '@locklevel': 0
                       '@colspan': 1
                       '@rowspan': 1
                       labels:
                         label:
-                          '@description': Approved By
+                          '@description': Interest Rate
                           '@languagecode': 1033
                       control:
-                        '@id': nxa_approvedby
-                        '@classid': '{4273EDBD-AC1D-40D3-9FB2-095C621B552D}'
-                        '@datafieldname': nxa_approvedby
+                        '@id': nxa_interestrate
+                        '@classid': '{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}'
+                        '@datafieldname': nxa_interestrate
                         '@disabled': false
                   - cell:
-                      '@id': '{e82e8f1f-3a1f-4c76-94de-3cae7e8bef05}'
+                      '@id': '{47f290a7-d219-42a9-abb5-f324a05b61de}'
                       '@locklevel': 0
                       '@colspan': 1
                       '@rowspan': 1
                       labels:
                         label:
-                          '@description': Approved On
+                          '@description': Product
                           '@languagecode': 1033
                       control:
-                        '@id': nxa_approvedon
-                        '@classid': '{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}'
-                        '@datafieldname': nxa_approvedon
-                        '@disabled': false
-                  - cell:
-                      '@id': '{86dfd7b6-3837-410c-8196-cd33804eca87}'
-                      '@locklevel': 0
-                      '@colspan': 1
-                      '@rowspan': 1
-                      labels:
-                        label:
-                          '@description': Description
-                          '@languagecode': 1033
-                      control:
-                        '@id': nxa_description
-                        '@classid': '{E0DECE4B-6FC8-4A8F-A065-082708572369}'
-                        '@datafieldname': nxa_description
-                        '@disabled': false
-                  - cell:
-                      '@id': '{328c7e08-f980-4e3e-a186-7d4847b5ca20}'
-                      '@locklevel': 0
-                      '@colspan': 1
-                      '@rowspan': 1
-                      labels:
-                        label:
-                          '@description': Error Details
-                          '@languagecode': 1033
-                      control:
-                        '@id': nxa_errordetails
-                        '@classid': '{E0DECE4B-6FC8-4A8F-A065-082708572369}'
-                        '@datafieldname': nxa_errordetails
-                        '@disabled': false
-                  - cell:
-                      '@id': '{e89f1666-8253-46d7-881f-e23398a4224a}'
-                      '@locklevel': 0
-                      '@colspan': 1
-                      '@rowspan': 1
-                      labels:
-                        label:
-                          '@description': Executed On
-                          '@languagecode': 1033
-                      control:
-                        '@id': nxa_executedon
-                        '@classid': '{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}'
-                        '@datafieldname': nxa_executedon
-                        '@disabled': false
-                  - cell:
-                      '@id': '{395bec96-c1df-42e7-81c7-a890e901fbaf}'
-                      '@locklevel': 0
-                      '@colspan': 1
-                      '@rowspan': 1
-                      labels:
-                        label:
-                          '@description': Lead
-                          '@languagecode': 1033
-                      control:
-                        '@id': nxa_leadid
+                        '@id': nxa_productid
                         '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
-                        '@datafieldname': nxa_leadid
+                        '@datafieldname': nxa_productid
                         '@disabled': false
                   - cell:
-                      '@id': '{1b9e9d6d-7a24-49ac-917b-545779d2f044}'
-                      '@locklevel': 0
-                      '@colspan': 1
-                      '@rowspan': 1
-                      labels:
-                        label:
-                          '@description': Opportunity
-                          '@languagecode': 1033
-                      control:
-                        '@id': nxa_opportunityid
-                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
-                        '@datafieldname': nxa_opportunityid
-                        '@disabled': false
-                  - cell:
-                      '@id': '{5bb4d58f-68c0-4ea2-a56b-11bd4851bfc2}'
-                      '@locklevel': 0
-                      '@colspan': 1
-                      '@rowspan': 1
-                      labels:
-                        label:
-                          '@description': Requires Approval
-                          '@languagecode': 1033
-                      control:
-                        '@id': nxa_requiresapproval
-                        '@classid': '{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}'
-                        '@datafieldname': nxa_requiresapproval
-                        '@disabled': false
-                  - cell:
-                      '@id': '{45aabdd1-4206-4e01-bf5e-045f7a8e6562}'
-                      '@locklevel': 0
-                      '@colspan': 1
-                      '@rowspan': 1
-                      labels:
-                        label:
-                          '@description': Result
-                          '@languagecode': 1033
-                      control:
-                        '@id': nxa_result
-                        '@classid': '{E0DECE4B-6FC8-4A8F-A065-082708572369}'
-                        '@datafieldname': nxa_result
-                        '@disabled': false
-                  - cell:
-                      '@id': '{43908396-7d2a-4637-8f54-aff22402c0de}'
+                      '@id': '{ad6504d5-b0b3-4ce0-b084-439f251d4253}'
                       '@locklevel': 0
                       '@colspan': 1
                       '@rowspan': 1
@@ -246,7 +148,7 @@ systemform:
                         '@datafieldname': nxa_status
                         '@disabled': false
                   - cell:
-                      '@id': '{4e1d761c-0966-4ba9-92e2-0b95061d578d}'
+                      '@id': '{b380ec80-d037-4277-9a65-954cd2e13395}'
                       '@locklevel': 0
                       '@colspan': 1
                       '@rowspan': 1
@@ -260,7 +162,7 @@ systemform:
                         '@datafieldname': statecode
                         '@disabled': false
                   - cell:
-                      '@id': '{9392237d-d458-4639-b231-4ab098cecf93}'
+                      '@id': '{cd39b032-db69-4201-bf80-2a18c5cdbb5e}'
                       '@locklevel': 0
                       '@colspan': 1
                       '@rowspan': 1
@@ -273,8 +175,36 @@ systemform:
                         '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
                         '@datafieldname': statuscode
                         '@disabled': false
+                  - cell:
+                      '@id': '{acfd525b-0483-49ba-96ed-86e47770d675}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Start Date
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_startdate
+                        '@classid': '{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}'
+                        '@datafieldname': nxa_startdate
+                        '@disabled': false
+                  - cell:
+                      '@id': '{a83b444f-428e-4d4e-b343-1d3479772f7c}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': End Date
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_enddate
+                        '@classid': '{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}'
+                        '@datafieldname': nxa_enddate
+                        '@disabled': false
     header:
-      '@id': '{d0afb974-7582-4423-a558-72f0ef47dffc}'
+      '@id': '{c686cc0f-a5c2-4eed-abbf-78f677745137}'
       '@celllabelposition': Top
       '@columns': 111
       '@labelwidth': 115
@@ -282,26 +212,26 @@ systemform:
       rows:
         row:
           cell:
-          - '@id': '{45d7da91-ff06-4b9b-a7e7-653a100b9739}'
+          - '@id': '{314802dc-0e1c-47a1-b8e3-a65d528183ed}'
             '@showlabel': false
             labels:
               label:
                 '@description': ''
                 '@languagecode': 1033
-          - '@id': '{a6cf7523-9440-4cb5-beeb-2ae997a956a6}'
+          - '@id': '{58e7e92b-24c6-498c-bef5-3630db749e90}'
             '@showlabel': false
             labels:
               label:
                 '@description': ''
                 '@languagecode': 1033
-          - '@id': '{bef36782-f1af-480d-ab8f-5fa390096e5b}'
+          - '@id': '{47487dd9-507d-4fce-a70c-354a151c0282}'
             '@showlabel': false
             labels:
               label:
                 '@description': ''
                 '@languagecode': 1033
     footer:
-      '@id': '{d5ae335a-907e-4cf2-9ccd-f776019153ea}'
+      '@id': '{1f0c1872-8a7f-48a1-9285-e9489b424534}'
       '@celllabelposition': Top
       '@columns': 111
       '@labelwidth': 115
@@ -309,19 +239,19 @@ systemform:
       rows:
         row:
           cell:
-          - '@id': '{d8500d9c-b847-4c2f-8ee2-26262272bbe9}'
+          - '@id': '{e10366fc-b1bb-43bc-b11e-877ce0636850}'
             '@showlabel': false
             labels:
               label:
                 '@description': ''
                 '@languagecode': 1033
-          - '@id': '{b79a89b6-2a11-449e-8c12-59566b5cd66a}'
+          - '@id': '{58c2d545-d613-4efd-a04d-23c2244d7113}'
             '@showlabel': false
             labels:
               label:
                 '@description': ''
                 '@languagecode': 1033
-          - '@id': '{cdacfb07-70fa-44da-96c6-992bc6f46971}'
+          - '@id': '{f19477f1-b482-4d09-a992-2a6290d4d2c8}'
             '@showlabel': false
             labels:
               label:

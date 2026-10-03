@@ -1,0 +1,31 @@
+EntityRelationship:
+  '@Name': nxa_product_nxa_productholding_nxa_productid
+  EntityRelationshipType: OneToMany
+  IsCustomizable: 1
+  IntroducedVersion: 1.0
+  IsHierarchical: 0
+  ReferencingEntityName: nxa_ProductHolding
+  ReferencedEntityName: nxa_Product
+  CascadeAssign: NoCascade
+  CascadeDelete: RemoveLink
+  CascadeArchive: RemoveLink
+  CascadeReparent: NoCascade
+  CascadeShare: NoCascade
+  CascadeUnshare: NoCascade
+  CascadeRollupView: NoCascade
+  IsValidForAdvancedFind: 1
+  ReferencingAttributeName: nxa_productid
+  RelationshipDescription:
+    Descriptions:
+      Description:
+        '@description': Lookup to nxa_product
+        '@languagecode': 1033
+  EntityRelationshipRoles:
+    EntityRelationshipRole:
+    - NavPaneDisplayOption: UseCollectionName
+      NavPaneArea: Details
+      NavPaneOrder: 10000
+      NavigationPropertyName: nxa_productid
+      RelationshipRoleType: 1
+    - NavigationPropertyName: nxa_product_nxa_productholding_nxa_productid
+      RelationshipRoleType: 0

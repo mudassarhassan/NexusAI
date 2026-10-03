@@ -21,6 +21,9 @@ RootComponents:
   - '@type': 1
     '@schemaName': nxa_product
     '@behavior': 0
+  - '@type': 1
+    '@schemaName': nxa_productholding
+    '@behavior': 0
   - '@type': 62
     '@schemaName': nxa_NexusAI
     '@behavior': 0

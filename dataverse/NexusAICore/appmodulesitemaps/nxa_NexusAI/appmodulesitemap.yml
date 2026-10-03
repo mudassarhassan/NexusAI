@@ -42,6 +42,13 @@ AppModuleSiteMap:
           '@AvailableOffline': true
           '@PassParams': false
           '@Sku': All,OnPremise,Live,SPLA
+        - '@Id': subarea_40ca70fb
+          '@Icon': /_imgs/imagestrips/transparent_spacer.gif
+          '@Entity': nxa_productholding
+          '@Client': All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web
+          '@AvailableOffline': true
+          '@PassParams': false
+          '@Sku': All,OnPremise,Live,SPLA
       - '@Id': group_e4150429
         '@ResourceId': SitemapDesigner.NewGroup
         '@DescriptionResourceId': SitemapDesigner.NewGroup
@@ -106,6 +113,24 @@ AppModuleSiteMap:
         - '@Id': subarea_bf01e609
           '@Icon': /_imgs/imagestrips/transparent_spacer.gif
           '@Entity': nxa_airecommendation
+          '@Client': All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web
+          '@AvailableOffline': true
+          '@PassParams': false
+          '@Sku': All,OnPremise,Live,SPLA
+      - '@Id': group_27e8f225
+        '@ResourceId': SitemapDesigner.NewGroup
+        '@DescriptionResourceId': SitemapDesigner.NewGroup
+        '@IntroducedVersion': 7.0.0.0
+        '@IsProfile': false
+        '@ToolTipResourseId': SitemapDesigner.Unknown
+        Titles:
+          Title:
+            '@LCID': 1033
+            '@Title': Products
+        SubArea:
+          '@Id': subarea_f0396ce8
+          '@Icon': /_imgs/imagestrips/transparent_spacer.gif
+          '@Entity': nxa_product
           '@Client': All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web
           '@AvailableOffline': true
           '@PassParams': false

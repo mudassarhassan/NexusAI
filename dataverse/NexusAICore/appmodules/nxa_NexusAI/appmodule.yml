@@ -17,7 +17,11 @@ AppModule:
     - '@type': 1
       '@schemaName': nxa_opportunity
     - '@type': 1
+      '@schemaName': nxa_product
+    - '@type': 1
       '@schemaName': nxa_aiactionlog
+    - '@type': 1
+      '@schemaName': nxa_productholding
     - '@type': 1
       '@schemaName': contact
     - '@type': 1

@@ -4,6 +4,7 @@ systemform:
   FormPresentation: 1
   FormActivationState: 1
   form:
+    '@headerdensity': HighWithControls
     tabs:
       tab:
         '@verticallayout': true
@@ -48,6 +49,162 @@ systemform:
                         '@id': ownerid
                         '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
                         '@datafieldname': ownerid
+                  - cell:
+                      '@id': '{0c786f1c-9e8a-4399-9529-42d0e6d40d7f}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Product Number
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_productnumber
+                        '@classid': '{4273EDBD-AC1D-40D3-9FB2-095C621B552D}'
+                        '@datafieldname': nxa_productnumber
+                        '@disabled': false
+                  - cell:
+                      '@id': '{7393dac1-2642-4f93-8952-e435119efec1}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Product Type
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_producttype
+                        '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
+                        '@datafieldname': nxa_producttype
+                        '@disabled': false
+                  - cell:
+                      '@id': '{bb0cb6eb-08af-4eff-af3d-867ecb3027eb}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Parent Product
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_parentproductid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': nxa_parentproductid
+                        '@disabled': false
+                  - cell:
+                      '@id': '{1cc4f469-a181-4f82-befe-7466757c57a0}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': List Price
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_price
+                        '@classid': '{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}'
+                        '@datafieldname': nxa_price
+                        '@disabled': false
+                  - cell:
+                      '@id': '{82224011-7306-49bf-aeca-a07c794828e4}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Current Cost
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_currentcost
+                        '@classid': '{C3EFE0C3-0EC6-42BE-8349-CBD9079DFD8E}'
+                        '@datafieldname': nxa_currentcost
+                        '@disabled': false
+                  - cell:
+                      '@id': '{ee96cb1b-6395-4cb2-9479-54eace91a8b0}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Status
+                          '@languagecode': 1033
+                      control:
+                        '@id': statecode
+                        '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
+                        '@datafieldname': statecode
+                        '@disabled': false
+                  - cell:
+                      '@id': '{6276cb88-d98e-4ca0-a2b4-a23801ce426c}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Status Reason
+                          '@languagecode': 1033
+                      control:
+                        '@id': statuscode
+                        '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
+                        '@datafieldname': statuscode
+                        '@disabled': false
+    header:
+      '@id': '{71fe0f90-2371-4891-b190-91218aa0cf2d}'
+      '@celllabelposition': Top
+      '@columns': 111
+      '@labelwidth': 115
+      '@celllabelalignment': Left
+      rows:
+        row:
+          cell:
+          - '@id': '{bdd37cfc-8bb1-4a0a-9cf6-2716ba52ac8d}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{9255236e-cf2e-44fa-9bfe-329bc446a214}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{ec838f17-e7ec-4d9f-83bc-3ad17f8b19a0}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+    footer:
+      '@id': '{9c4de65c-c58d-47cd-ba9e-74f2f9b24526}'
+      '@celllabelposition': Top
+      '@columns': 111
+      '@labelwidth': 115
+      '@celllabelalignment': Left
+      rows:
+        row:
+          cell:
+          - '@id': '{0c7da430-1779-4cc5-9b22-6086675f8015}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{87f9bc20-8f67-4faf-9a6b-57c50e6e2d8a}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{92f1c5a0-a1df-468a-b0f8-ea882901ae14}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+    DisplayConditions:
+      '@Order': 0
+      '@FallbackForm': true
+      Everyone: 
   IsCustomizable: 1
   CanBeDeleted: 1
   LocalizedNames:

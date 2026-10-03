@@ -4,6 +4,7 @@ systemform:
   FormPresentation: 1
   FormActivationState: 1
   form:
+    '@headerdensity': HighWithControls
     tabs:
       tab:
         '@verticallayout': true
@@ -48,6 +49,232 @@ systemform:
                         '@id': ownerid
                         '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
                         '@datafieldname': ownerid
+                  - cell:
+                      '@id': '{c1350057-280b-4eca-857c-7b3c05788678}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Account
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_accountid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': nxa_accountid
+                        '@disabled': false
+                  - cell:
+                      '@id': '{3cb19c8c-7e68-40f9-9b90-763e92add160}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Contact
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_contactid
+                        '@classid': '{270BD3DB-D9AF-4782-9025-509E298DEC0A}'
+                        '@datafieldname': nxa_contactid
+                        '@disabled': false
+                  - cell:
+                      '@id': '{78e4f06f-5354-4095-8d67-a1518774e1ae}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Company Name
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_companyname
+                        '@classid': '{4273EDBD-AC1D-40D3-9FB2-095C621B552D}'
+                        '@datafieldname': nxa_companyname
+                        '@disabled': false
+                  - cell:
+                      '@id': '{459c3374-1229-4e98-8725-314a093252c3}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Email
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_emailaddress
+                        '@classid': '{ADA2203E-B4CD-49BE-9DDF-234642B43B52}'
+                        '@datafieldname': nxa_emailaddress
+                        '@disabled': false
+                  - cell:
+                      '@id': '{7d734467-f0df-4a46-b2ae-16546c701562}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': First Name
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_firstname
+                        '@classid': '{4273EDBD-AC1D-40D3-9FB2-095C621B552D}'
+                        '@datafieldname': nxa_firstname
+                        '@disabled': false
+                  - cell:
+                      '@id': '{d80f08d2-6343-4855-a2cf-655c0ef43e1e}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Last Name
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_lastname
+                        '@classid': '{4273EDBD-AC1D-40D3-9FB2-095C621B552D}'
+                        '@datafieldname': nxa_lastname
+                        '@disabled': false
+                  - cell:
+                      '@id': '{7e3f2ee2-9a70-42e2-ab4d-ba941ddaa12c}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Lead Source
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_leadsource
+                        '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
+                        '@datafieldname': nxa_leadsource
+                        '@disabled': false
+                  - cell:
+                      '@id': '{1d70757e-93d2-4b41-8f7b-254f5e9a5be3}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Phone
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_telephone
+                        '@classid': '{4273EDBD-AC1D-40D3-9FB2-095C621B552D}'
+                        '@datafieldname': nxa_telephone
+                        '@disabled': false
+                  - cell:
+                      '@id': '{490f78e1-f8c5-43ae-9831-8d24326f9b80}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Rating
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_rating
+                        '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
+                        '@datafieldname': nxa_rating
+                        '@disabled': false
+                  - cell:
+                      '@id': '{23118c65-7121-418b-bd88-31571e259586}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Status
+                          '@languagecode': 1033
+                      control:
+                        '@id': nxa_status
+                        '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
+                        '@datafieldname': nxa_status
+                        '@disabled': false
+                  - cell:
+                      '@id': '{14e786c6-cbde-482e-9585-f840d7d4c926}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Status
+                          '@languagecode': 1033
+                      control:
+                        '@id': statecode
+                        '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
+                        '@datafieldname': statecode
+                        '@disabled': false
+                  - cell:
+                      '@id': '{5b868d03-a43a-4529-90ee-1325ed80e755}'
+                      '@locklevel': 0
+                      '@colspan': 1
+                      '@rowspan': 1
+                      labels:
+                        label:
+                          '@description': Status Reason
+                          '@languagecode': 1033
+                      control:
+                        '@id': statuscode
+                        '@classid': '{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}'
+                        '@datafieldname': statuscode
+                        '@disabled': false
+    header:
+      '@id': '{3c878f4c-a253-4f9e-bdb0-a5554b2b5996}'
+      '@celllabelposition': Top
+      '@columns': 111
+      '@labelwidth': 115
+      '@celllabelalignment': Left
+      rows:
+        row:
+          cell:
+          - '@id': '{3dd9b715-56a6-4ce4-8636-4e89de6c671f}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{37781e60-b606-4809-8c64-78b1b8811b2e}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{81ba8371-cc92-4443-8e78-f590ec85d6a4}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+    footer:
+      '@id': '{83a6d9a5-f4a7-4819-b9b4-b95a2e456a57}'
+      '@celllabelposition': Top
+      '@columns': 111
+      '@labelwidth': 115
+      '@celllabelalignment': Left
+      rows:
+        row:
+          cell:
+          - '@id': '{3d8225bb-68ea-4a90-96f7-07809e357e35}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{a5a33d95-98db-4c86-aa20-e1f5cea42cca}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+          - '@id': '{33985719-69c9-4613-8354-e006dfd90755}'
+            '@showlabel': false
+            labels:
+              label:
+                '@description': ''
+                '@languagecode': 1033
+    DisplayConditions:
+      '@Order': 0
+      '@FallbackForm': true
+      Everyone: 
   IsCustomizable: 1
   CanBeDeleted: 1
   LocalizedNames:
