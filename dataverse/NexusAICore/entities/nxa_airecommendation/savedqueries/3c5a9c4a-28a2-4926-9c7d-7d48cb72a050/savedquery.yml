@@ -1,0 +1,44 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{3c5a9c4a-28a2-4926-9c7d-7d48cb72a050}'
+  layoutxml:
+    grid:
+      '@name': nxa_airecommendations
+      '@jump': nxa_name
+      '@select': 1
+      '@icon': 1
+      '@preview': 0
+      row:
+        '@name': nxa_airecommendation
+        '@id': nxa_airecommendationid
+        cell:
+        - '@name': nxa_name
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+  querytype: 64
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': nxa_airecommendation
+        attribute:
+        - '@name': nxa_airecommendationid
+        - '@name': nxa_name
+        - '@name': createdon
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': AI Recommendation Lookup View
+      '@languagecode': 1033

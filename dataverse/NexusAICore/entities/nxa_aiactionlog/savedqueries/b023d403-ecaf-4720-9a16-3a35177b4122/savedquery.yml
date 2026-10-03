@@ -1,0 +1,41 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{b023d403-ecaf-4720-9a16-3a35177b4122}'
+  layoutxml:
+    grid:
+      '@name': resultset
+      '@jump': nxa_name
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': result
+        '@id': nxa_aiactionlogid
+        cell:
+        - '@name': nxa_name
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+  querytype: 1
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': nxa_aiactionlog
+        attribute:
+        - '@name': nxa_aiactionlogid
+        - '@name': nxa_name
+        - '@name': createdon
+        order:
+          '@attribute': nxa_name
+          '@descending': false
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': AI Action Log Advanced Find View
+      '@languagecode': 1033

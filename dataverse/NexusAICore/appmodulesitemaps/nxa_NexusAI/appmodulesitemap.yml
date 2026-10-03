@@ -60,6 +60,56 @@ AppModuleSiteMap:
           '@AvailableOffline': true
           '@PassParams': false
           '@Sku': All,OnPremise,Live,SPLA
+      - '@Id': group_d7dfac3f
+        '@ResourceId': SitemapDesigner.NewGroup
+        '@DescriptionResourceId': SitemapDesigner.NewGroup
+        '@IntroducedVersion': 7.0.0.0
+        '@IsProfile': false
+        '@ToolTipResourseId': SitemapDesigner.Unknown
+        Titles:
+          Title:
+            '@LCID': 1033
+            '@Title': Sales
+        SubArea:
+        - '@Id': subarea_6cee20af
+          '@Icon': /_imgs/imagestrips/transparent_spacer.gif
+          '@Entity': nxa_lead
+          '@Client': All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web
+          '@AvailableOffline': true
+          '@PassParams': false
+          '@Sku': All,OnPremise,Live,SPLA
+        - '@Id': subarea_0aaa62b7
+          '@Icon': /_imgs/imagestrips/transparent_spacer.gif
+          '@Entity': nxa_opportunity
+          '@Client': All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web
+          '@AvailableOffline': true
+          '@PassParams': false
+          '@Sku': All,OnPremise,Live,SPLA
+      - '@Id': group_6f81a5ad
+        '@ResourceId': SitemapDesigner.NewGroup
+        '@DescriptionResourceId': SitemapDesigner.NewGroup
+        '@IntroducedVersion': 7.0.0.0
+        '@IsProfile': false
+        '@ToolTipResourseId': SitemapDesigner.Unknown
+        Titles:
+          Title:
+            '@LCID': 1033
+            '@Title': AI
+        SubArea:
+        - '@Id': subarea_c8f20147
+          '@Icon': /_imgs/imagestrips/transparent_spacer.gif
+          '@Entity': nxa_aiactionlog
+          '@Client': All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web
+          '@AvailableOffline': true
+          '@PassParams': false
+          '@Sku': All,OnPremise,Live,SPLA
+        - '@Id': subarea_bf01e609
+          '@Icon': /_imgs/imagestrips/transparent_spacer.gif
+          '@Entity': nxa_airecommendation
+          '@Client': All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web
+          '@AvailableOffline': true
+          '@PassParams': false
+          '@Sku': All,OnPremise,Live,SPLA
   LocalizedNames:
     LocalizedName:
       '@description': Nexus AI

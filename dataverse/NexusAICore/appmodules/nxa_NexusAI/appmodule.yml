@@ -11,6 +11,14 @@ AppModule:
   AppModuleComponents:
     AppModuleComponent:
     - '@type': 1
+      '@schemaName': nxa_airecommendation
+    - '@type': 1
+      '@schemaName': nxa_lead
+    - '@type': 1
+      '@schemaName': nxa_opportunity
+    - '@type': 1
+      '@schemaName': nxa_aiactionlog
+    - '@type': 1
       '@schemaName': contact
     - '@type': 1
       '@schemaName': account

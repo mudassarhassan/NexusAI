@@ -1,0 +1,40 @@
+attribute:
+  '@PhysicalName': nxa_result
+  Type: ntext
+  Name: nxa_result
+  LogicalName: nxa_result
+  RequiredLevel: none
+  DisplayMask: ValidForForm|ValidForGrid
+  ImeMode: auto
+  ValidForUpdateApi: 1
+  ValidForReadApi: 1
+  ValidForCreateApi: 1
+  IsCustomField: 1
+  IsAuditEnabled: 1
+  IsSecured: 0
+  IntroducedVersion: 1.0
+  IsCustomizable: 1
+  IsRenameable: 1
+  CanModifySearchSettings: 1
+  CanModifyRequirementLevelSettings: 1
+  CanModifyAdditionalSettings: 1
+  SourceType: 0
+  IsGlobalFilterEnabled: 0
+  IsSortableEnabled: 0
+  CanModifyGlobalFilterSettings: 1
+  CanModifyIsSortableSettings: 1
+  IsDataSourceSecret: 0
+  IsSearchable: 0
+  IsFilterable: 0
+  IsRetrievable: 0
+  IsLocalizable: 0
+  Format: textarea
+  MaxLength: 2000
+  displaynames:
+    displayname:
+      '@description': Result
+      '@languagecode': 1033
+  Descriptions:
+    Description:
+      '@description': Result for nxa_aiactionlog
+      '@languagecode': 1033

@@ -1,0 +1,9 @@
+Entity:
+  Name:
+    '@LocalizedName': Account
+    '@OriginalName': ''
+    '#text': Account
+  EntityInfo:
+    entity:
+      '@Name': Account
+      '@unmodified': 1
