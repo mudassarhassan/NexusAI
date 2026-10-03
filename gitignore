@@ -1,0 +1,33 @@
+# Build output (covers every project under any folder depth: DataverseModelGenerator,
+# NexusAI.Agent, NexusAI.LlmBasics, and any future ones)
+**/bin/
+**/obj/
+
+# Visual Studio / VS Code tooling
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+**/packages/
+
+# Logs
+*.log
+
+# Python (create_dataverse_model.py, generate_sample_data.py, get_customer_360.py, etc.)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+*.egg-info/
