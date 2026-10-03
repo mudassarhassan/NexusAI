@@ -1,0 +1,47 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 0
+  savedqueryid: '{a2b5d1fe-37a7-4e67-a404-9ad527a6c19d}'
+  layoutxml:
+    grid:
+      '@name': resultset
+      '@jump': nxa_name
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': result
+        '@id': nxa_opportunityid
+        cell:
+        - '@name': nxa_name
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+  querytype: 0
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': nxa_opportunity
+        attribute:
+        - '@name': nxa_opportunityid
+        - '@name': nxa_name
+        - '@name': createdon
+        order:
+          '@attribute': nxa_name
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 1
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': Inactive NexusAI Opportunities
+      '@languagecode': 1033

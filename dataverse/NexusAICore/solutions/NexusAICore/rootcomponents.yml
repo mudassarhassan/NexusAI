@@ -1,0 +1,29 @@
+RootComponents:
+  RootComponent:
+  - '@type': 1
+    '@schemaName': account
+    '@behavior': 2
+  - '@type': 1
+    '@schemaName': contact
+    '@behavior': 2
+  - '@type': 1
+    '@schemaName': nxa_aiactionlog
+    '@behavior': 0
+  - '@type': 1
+    '@schemaName': nxa_airecommendation
+    '@behavior': 0
+  - '@type': 1
+    '@schemaName': nxa_lead
+    '@behavior': 0
+  - '@type': 1
+    '@schemaName': nxa_opportunity
+    '@behavior': 0
+  - '@type': 1
+    '@schemaName': nxa_product
+    '@behavior': 0
+  - '@type': 62
+    '@schemaName': nxa_NexusAI
+    '@behavior': 0
+  - '@type': 80
+    '@schemaName': nxa_NexusAI
+    '@behavior': 0

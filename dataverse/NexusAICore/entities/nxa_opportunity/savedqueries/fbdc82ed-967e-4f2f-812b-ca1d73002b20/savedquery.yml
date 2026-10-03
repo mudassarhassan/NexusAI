@@ -1,0 +1,41 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{fbdc82ed-967e-4f2f-812b-ca1d73002b20}'
+  layoutxml:
+    grid:
+      '@name': resultset
+      '@jump': nxa_name
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': result
+        '@id': nxa_opportunityid
+        cell:
+        - '@name': nxa_name
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+  querytype: 1
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': nxa_opportunity
+        attribute:
+        - '@name': nxa_opportunityid
+        - '@name': nxa_name
+        - '@name': createdon
+        order:
+          '@attribute': nxa_name
+          '@descending': false
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': NexusAI Opportunity Advanced Find View
+      '@languagecode': 1033

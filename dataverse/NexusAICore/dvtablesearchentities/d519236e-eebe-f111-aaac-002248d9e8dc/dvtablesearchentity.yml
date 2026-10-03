@@ -1,0 +1,8 @@
+dvtablesearchentity:
+  '@dvtablesearchentityid': d519236e-eebe-f111-aaac-002248d9e8dc
+  dvtablesearch:
+    dvtablesearchid: d319236e-eebe-f111-aaac-002248d9e8dc
+  entitylogicalname: account
+  iscustomizable: 1
+  statecode: 0
+  statuscode: 1

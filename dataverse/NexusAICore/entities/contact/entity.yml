@@ -1,0 +1,9 @@
+Entity:
+  Name:
+    '@LocalizedName': Contact
+    '@OriginalName': ''
+    '#text': Contact
+  EntityInfo:
+    entity:
+      '@Name': Contact
+      '@unmodified': 1

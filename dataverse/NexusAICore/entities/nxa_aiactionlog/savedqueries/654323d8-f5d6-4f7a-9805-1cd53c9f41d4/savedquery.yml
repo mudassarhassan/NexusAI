@@ -1,0 +1,47 @@
+savedquery:
+  IsCustomizable: 1
+  CanBeDeleted: 0
+  isquickfindquery: 0
+  isprivate: 0
+  isdefault: 1
+  savedqueryid: '{654323d8-f5d6-4f7a-9805-1cd53c9f41d4}'
+  layoutxml:
+    grid:
+      '@name': nxa_aiactionlogs
+      '@jump': nxa_name
+      '@select': 1
+      '@icon': 1
+      '@preview': 1
+      row:
+        '@name': nxa_aiactionlog
+        '@id': nxa_aiactionlogid
+        cell:
+        - '@name': nxa_name
+          '@width': 300
+        - '@name': createdon
+          '@width': 125
+  querytype: 2
+  fetchxml:
+    fetch:
+      '@version': 1.0
+      '@mapping': logical
+      entity:
+        '@name': nxa_aiactionlog
+        attribute:
+        - '@name': nxa_aiactionlogid
+        - '@name': nxa_name
+        - '@name': createdon
+        order:
+          '@attribute': nxa_name
+          '@descending': false
+        filter:
+          '@type': and
+          condition:
+            '@attribute': statecode
+            '@operator': eq
+            '@value': 0
+  IntroducedVersion: 1.0
+  LocalizedNames:
+    LocalizedName:
+      '@description': AI Action Log Associated View
+      '@languagecode': 1033

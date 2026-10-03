@@ -1,0 +1,31 @@
+EntityRelationship:
+  '@Name': nxa_lead_nxa_aiactionlog_nxa_leadid
+  EntityRelationshipType: OneToMany
+  IsCustomizable: 1
+  IntroducedVersion: 1.0
+  IsHierarchical: 0
+  ReferencingEntityName: nxa_AIActionLog
+  ReferencedEntityName: nxa_Lead
+  CascadeAssign: NoCascade
+  CascadeDelete: RemoveLink
+  CascadeArchive: RemoveLink
+  CascadeReparent: NoCascade
+  CascadeShare: NoCascade
+  CascadeUnshare: NoCascade
+  CascadeRollupView: NoCascade
+  IsValidForAdvancedFind: 1
+  ReferencingAttributeName: nxa_leadid
+  RelationshipDescription:
+    Descriptions:
+      Description:
+        '@description': Lookup to nxa_lead
+        '@languagecode': 1033
+  EntityRelationshipRoles:
+    EntityRelationshipRole:
+    - NavPaneDisplayOption: UseCollectionName
+      NavPaneArea: Details
+      NavPaneOrder: 10000
+      NavigationPropertyName: nxa_leadid
+      RelationshipRoleType: 1
+    - NavigationPropertyName: nxa_lead_nxa_aiactionlog_nxa_leadid
+      RelationshipRoleType: 0
