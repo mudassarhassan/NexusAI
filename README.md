@@ -50,6 +50,7 @@ Examples:
 nxa_lead
 nxa_opportunity
 nxa_product
+nxa_productholding
 nxa_airecommendation
 nxa_aiactionlog
 ```
@@ -66,6 +67,10 @@ NexusAI/
 ├── dataverse/
 │   └── NexusAI solution artifacts
 │
+├── scripts/
+│   ├── create_dataverse_model.py
+│   └── generate_sample_data.py
+│
 ├── src/
 │   ├── agent/
 │   ├── tools/
@@ -73,6 +78,7 @@ NexusAI/
 │   └── api/
 │
 ├── docs/
+│   └── NexusAI_Data_Model.md
 │
 ├── tests/
 │
@@ -85,23 +91,21 @@ The `/dataverse` folder is the root folder for Dataverse Git integration.
 
 # 3. Core Architecture Principle
 
-## Reuse Dataverse First
+## Reuse Dataverse First — With a Documented Fallback
 
 NexusAI must **reuse existing out-of-the-box Dataverse tables and capabilities wherever possible**.
 
-Do **not** create custom replacements for standard Dataverse entities such as:
-
-- Account
-- Contact
-- Opportunity
-- Product
-- Activities
-
 Before creating a new table, inspect the existing Dataverse environment and determine whether an OOB table, column, relationship, activity, or existing component can satisfy the requirement.
 
-Create custom Dataverse components only where there is a genuine NexusAI-specific requirement.
+**Finding for this environment:** Inspection of the target Dataverse environment (`nexusai.crm12.dynamics.com`) confirmed that the standard **Lead**, **Opportunity**, and **Product** tables are **not present** (the Dynamics 365 Sales app/tables are not provisioned here). Rather than block on platform-level provisioning, NexusAI models these as custom tables with the `nxa_` prefix:
 
-This is an important architectural principle of the project.
+- `nxa_lead` (fallback for standard Lead)
+- `nxa_opportunity` (fallback for standard Opportunity)
+- `nxa_product` (fallback for standard Product)
+
+**Account**, **Contact**, and **Activities** remain standard OOB tables and are reused as-is — these were confirmed present in the environment.
+
+Create custom Dataverse components only where there is a genuine NexusAI-specific requirement, or where a required standard table is confirmed absent from the environment (as above). See `docs/NexusAI_Data_Model.md` for the full rationale and field-level detail.
 
 ---
 
@@ -113,9 +117,9 @@ NexusAI has **two connected but separately implemented workstreams**.
 
 Inspect the existing Dataverse environment first.
 
-Reuse standard Dataverse tables and extend them only where necessary.
+Reuse standard Dataverse tables (Account, Contact, Activities) and extend them only where necessary.
 
-Create NexusAI-specific custom components where required.
+Create NexusAI-specific custom components, and custom fallbacks for standard tables confirmed absent from this environment (Lead, Opportunity, Product), where required.
 
 ## Workstream B — AI Agent
 
@@ -154,30 +158,34 @@ Do not attempt to implement both workstreams at once. Follow the phases below.
              |                |                |
              v                v                v
        Existing OOB      Azure AI Search   APIs / MCP
-       Dataverse Data
+       + Custom Data
              |
      +-------+--------+
      |       |        |
- Account  Contact  Opportunity
-     |
- Activities / Products
-     |
-     +----------------------+
-                            |
-                            v
-                    NexusAI Custom Data
-                    - AI Recommendation
-                    - AI Action Log
-                    - Customer Product*
-                            |
-                            v
-                    Human Approval
-                            |
-                            v
-                       Execute Action
+ Account  Contact  nxa_Opportunity
+     |                  |
+ Activities        nxa_Lead
+     |                  |
+     +------------------+
+            |
+            v
+      nxa_Product
+            |
+            v
+   nxa_Product Holding
+     (current holdings)
+            |
+            v
+      NexusAI Custom Data
+      - AI Recommendation
+      - AI Action Log
+            |
+            v
+      Human Approval
+            |
+            v
+         Execute Action
 ```
-
-`*` Create Customer Product only if the existing Product/customer relationship model does not adequately support the requirement.
 
 ---
 
@@ -198,13 +206,13 @@ Do not modify unrelated solutions or components.
 
 ---
 
-# 7. Existing Dataverse Components
+# 7. Dataverse Components
 
-The implementation must inspect the environment before creating components.
+The implementation inspected the environment before creating components (see Section 3).
 
 ## 7.1 Account
 
-**Use the existing OOB Account table.**
+**Uses the existing OOB Account table.** Confirmed present; reused as-is.
 
 Do not create a custom Customer or Organization table to replace Account.
 
@@ -226,7 +234,7 @@ Only add custom columns if NexusAI has a clearly documented requirement.
 
 ## 7.2 Contact
 
-**Use the existing OOB Contact table.**
+**Uses the existing OOB Contact table.** Confirmed present; reused as-is.
 
 Do not create a custom Customer table to replace Contact.
 
@@ -245,25 +253,31 @@ Only add custom columns where required.
 
 ---
 
-## 7.3 Opportunity
+## 7.3 Lead (custom fallback: `nxa_lead`)
 
-**Use the existing OOB Opportunity table where appropriate.**
+**Standard Lead is not present in this environment.** NexusAI uses a custom `nxa_lead` table instead of waiting on platform-level provisioning (installing the Dynamics 365 Sales app). See `docs/NexusAI_Data_Model.md` Section 7 for the full field list.
 
-Do not create `nxa_opportunity` unless the OOB Opportunity table genuinely cannot satisfy a documented requirement.
-
-Use standard relationships to Account/Contact and Product where applicable.
+If the Dynamics 365 Sales app is provisioned in this environment in future, re-evaluate whether to migrate to the standard Lead table.
 
 ---
 
-## 7.4 Product
+## 7.4 Opportunity (custom fallback: `nxa_opportunity`)
 
-**Use the existing OOB Product table where appropriate.**
+**Standard Opportunity is not present in this environment.** NexusAI uses a custom `nxa_opportunity` table instead. See `docs/NexusAI_Data_Model.md` Section 8.
 
-Do not create a custom Product table unless there is a demonstrated gap.
+Preserves the Lead → Opportunity relationship via a lookup to `nxa_lead`.
 
 ---
 
-## 7.5 Activities
+## 7.5 Product (custom fallback: `nxa_product`)
+
+**Standard Product is not present in this environment.** NexusAI uses a custom `nxa_product` table instead. See `docs/NexusAI_Data_Model.md` Section 9.
+
+Includes a self-referencing Parent Product lookup for product bundling/hierarchy.
+
+---
+
+## 7.6 Activities
 
 Inspect and reuse existing Dataverse activity capabilities.
 
@@ -283,8 +297,6 @@ If a custom interaction abstraction is required, document the reason before crea
 
 # 8. NexusAI Custom Dataverse Components
 
-The initial custom components should be limited to capabilities that are specific to the AI solution.
-
 ## 8.1 AI Recommendation
 
 **Logical name:** `nxa_airecommendation`
@@ -300,7 +312,9 @@ Suggested columns:
 | Recommendation Name | Text |
 | Account | Lookup → Account |
 | Contact | Lookup → Contact |
-| Product | Lookup → Product |
+| Lead | Lookup → nxa_lead |
+| Opportunity | Lookup → nxa_opportunity |
+| Product | Lookup → nxa_product |
 | Recommendation | Multiline Text |
 | Reason | Multiline Text |
 | Supporting Evidence | Multiline Text |
@@ -311,7 +325,7 @@ Suggested columns:
 | Human Approved | Yes/No |
 | Approval Date | Date/Time |
 
-The Account/Contact/Product relationships should use existing OOB tables.
+The Account/Contact relationships use the existing OOB tables; Lead/Opportunity/Product use the NexusAI custom fallback tables described in Section 7.
 
 ---
 
@@ -330,6 +344,8 @@ Suggested columns:
 | Action Name | Text |
 | Account | Lookup → Account |
 | Contact | Lookup → Contact |
+| Lead | Lookup → nxa_lead |
+| Opportunity | Lookup → nxa_opportunity |
 | Action Type | Choice |
 | Description | Multiline Text |
 | Agent | Text |
@@ -343,42 +359,43 @@ Suggested columns:
 
 ---
 
-## 8.3 Customer Product
+## 8.3 Product Holding
 
-**Logical name:** `nxa_customerproduct`
+**Logical name:** `nxa_productholding`
 
-Create this only if the existing Dataverse Product and relationship model does not adequately represent products held by a customer.
+This resolves the originally-deferred "Customer Product" question (previously tracked under the working name `nxa_customerproduct`). After confirming Product itself required a custom fallback (`nxa_product`), the equivalent standard sales-process structures (Quote/Order/Invoice) were not available either, so a dedicated holdings table was introduced.
 
 Purpose:
 
-Represents products/services currently associated with an Account or Contact.
+Represents a product currently or previously held by an Account or Contact — independent of the sales pipeline (Lead → Opportunity) that may have produced it.
 
 Suggested columns:
 
 | Column | Type |
 |---|---|
-| Customer Product Name | Text |
+| Holding Name | Text |
 | Account | Lookup → Account |
 | Contact | Lookup → Contact |
-| Product | Lookup → Product |
+| Product | Lookup → nxa_product |
+| Holding Number | Text |
 | Start Date | Date |
+| End Date | Date |
+| Balance | Decimal |
+| Interest Rate | Decimal |
 | Status | Choice |
-| Balance / Value | Currency |
 
-Before creating this table, inspect the existing environment for suitable OOB tables such as orders, subscriptions, assets, or other applicable relationship structures.
+A holding belongs to either an Account or a Contact (not necessarily both) — not every lookup needs to be populated. See `docs/NexusAI_Data_Model.md` Section 17 for full detail.
 
 ---
 
 # 9. Dataverse Relationship Model
-
-The preferred model is:
 
 ```text
 Account
    |
    +----< Contacts
    |
-   +----< Opportunities
+   +----< nxa_Opportunities
    |
    +----< Activities
    |
@@ -386,28 +403,30 @@ Account
    |
    +----< AI Action Logs
    |
-   +----< Customer Products*
+   +----< nxa_Product Holdings
               |
-              +----> Product
-```
+              +----> nxa_Product
 
-And:
-
-```text
 Contact
    |
    +----< Activities
    |
-   +----< Opportunities
+   +----< nxa_Opportunities
    |
    +----< AI Recommendations
    |
    +----< AI Action Logs
    |
-   +----< Customer Products*
-```
+   +----< nxa_Product Holdings
 
-`*` Only if required after inspecting the existing Dataverse model.
+nxa_Lead
+   |
+   +----< nxa_Opportunities (originating lead)
+   |
+   +----< AI Recommendations
+   |
+   +----< AI Action Logs
+```
 
 ---
 
@@ -415,15 +434,19 @@ Contact
 
 Use realistic but completely synthetic data.
 
-Suggested initial dataset:
+Current generator (`scripts/generate_sample_data.py`) default dataset:
 
-- 20 Accounts
-- 30 Contacts
-- 30+ Products or existing Product records
-- 40 Activities
-- 10 Opportunities
-- AI Recommendations generated during testing
-- AI Action Logs generated during agent testing
+- 60 Accounts
+- 80 Contacts
+- 15 Products (`nxa_product`)
+- 90 Product Holdings (`nxa_productholding`)
+- 80 Leads (`nxa_lead`)
+- 70 Opportunities (`nxa_opportunity`)
+- 90 AI Recommendations (`nxa_airecommendation`)
+- 70 AI Action Logs (`nxa_aiactionlog`)
+- Activities (future — not yet generated by the script)
+
+Counts are configurable via `RECORD_COUNTS` in the script.
 
 Do not use:
 
@@ -462,11 +485,11 @@ get_contact()
 get_customer_360()
 get_account_opportunities()
 get_contact_activities()
-get_customer_products()
+get_customer_product_holdings()
 get_product()
 ```
 
-The exact tool set should be refined after inspecting the existing Dataverse schema.
+The exact tool set should be refined after inspecting the existing Dataverse schema. Note the custom table names (`nxa_lead`, `nxa_opportunity`, `nxa_product`, `nxa_productholding`) when implementing these tools in this environment.
 
 The agent should retrieve information from Dataverse rather than inventing it.
 
@@ -485,7 +508,7 @@ User:
 Agent:
 1. Identify Sarah
 2. Retrieve Account/Contact information
-3. Retrieve products
+3. Retrieve product holdings
 4. Retrieve recent activities
 5. Retrieve opportunities
 6. Summarize customer context
@@ -604,7 +627,7 @@ User:
 The agent should:
 
 1. Retrieve customer context.
-2. Retrieve existing products.
+2. Retrieve existing product holdings.
 3. Retrieve relevant knowledge.
 4. Evaluate available products.
 5. Generate a recommendation.
@@ -723,12 +746,12 @@ When modifying the project:
 
 1. **Read this README before implementing a new feature.**
 2. Inspect the existing Dataverse environment before creating tables or components.
-3. **Reuse OOB Dataverse tables first.**
-4. Do not create custom replacements for Account, Contact, Opportunity, Product, or Activities unless a documented requirement proves they are insufficient.
+3. **Reuse OOB Dataverse tables first** (Account, Contact, Activities — confirmed present in this environment).
+4. For Lead, Opportunity, and Product — confirmed **absent** from this environment — use the existing custom fallbacks (`nxa_lead`, `nxa_opportunity`, `nxa_product`) rather than recreating the inspection/decision; do not create additional duplicate custom tables for these.
 5. Keep NexusAI customizations inside the NexusAI solution.
 6. Use the `nxa` publisher prefix for custom Dataverse components.
 7. Use synthetic data only.
-8. Do not invent Dataverse schema outside this specification without documenting the change.
+8. Do not invent Dataverse schema outside `docs/NexusAI_Data_Model.md` without documenting the change there first.
 9. Prefer small, testable changes.
 10. Add tests for important functionality.
 11. Update documentation when architecture changes.
@@ -754,21 +777,22 @@ When modifying the project:
 - [ ] Confirm Dataverse root Git folder is `/dataverse`
 - [ ] Confirm NexusAI solution
 - [ ] Confirm publisher prefix is `nxa`
-- [ ] Inspect existing Dataverse tables and solutions
-- [ ] Confirm Account OOB table can be reused
-- [ ] Confirm Contact OOB table can be reused
-- [ ] Confirm Opportunity OOB table can be reused
-- [ ] Confirm Product OOB table can be reused
-- [ ] Inspect existing Activities
-- [ ] Identify required custom components
-- [ ] Create AI Recommendation table if required
-- [ ] Create AI Action Log table if required
-- [ ] Determine whether Customer Product table is actually required
-- [ ] Configure required relationships
-- [ ] Configure choices
+- [x] Inspect existing Dataverse tables and solutions
+- [x] Confirm Account OOB table can be reused
+- [x] Confirm Contact OOB table can be reused
+- [x] Confirm Lead/Opportunity/Product are NOT present in this environment → use custom fallbacks
+- [x] Inspect existing Activities
+- [x] Create `nxa_lead` (custom fallback)
+- [x] Create `nxa_opportunity` (custom fallback)
+- [x] Create `nxa_product` (custom fallback)
+- [x] Create `nxa_productholding` (resolves deferred Customer Product question)
+- [x] Create AI Recommendation table (`nxa_airecommendation`)
+- [x] Create AI Action Log table (`nxa_aiactionlog`)
+- [x] Configure required relationships (lookups)
+- [x] Configure choices (picklists)
 - [ ] Configure views/forms
 - [ ] Configure security
-- [ ] Create synthetic test data
+- [x] Create synthetic test data (`scripts/generate_sample_data.py`)
 
 ## AI Agent
 
@@ -814,9 +838,9 @@ NexusAI is considered complete when a user can ask:
 
 The system should:
 
-1. Identify Sarah using the existing Dataverse Account/Contact model.
+1. Identify Sarah using the Account/Contact model (OOB) combined with the NexusAI Lead/Opportunity model (custom fallback, this environment).
 2. Retrieve relevant customer information from Dataverse.
-3. Retrieve products, activities, and opportunities using existing Dataverse capabilities.
+3. Retrieve product holdings, activities, and opportunities using the implemented Dataverse tables.
 4. Search relevant enterprise knowledge using RAG.
 5. Generate a grounded meeting briefing.
 6. Provide supporting citations.

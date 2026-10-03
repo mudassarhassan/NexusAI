@@ -34,7 +34,7 @@ The solution should avoid creating custom replacements for standard CRM entities
 6. Support Customer 360 and agentic AI scenarios.
 7. Use synthetic data only.
 8. Keep relationships explicit and understandable.
-9. Do not create `nxa_customerproduct` at this stage.
+9. `nxa_customerproduct` has been resolved as `nxa_productholding` — see Section 17.
 10. Extend the model only when an actual agent use case demonstrates a gap.
 
 ---
@@ -361,10 +361,9 @@ Custom entities in this model:
 1. `nxa_lead` (custom fallback for standard Lead — see Section 7)
 2. `nxa_opportunity` (custom fallback for standard Opportunity — see Section 8)
 3. `nxa_product` (custom fallback for standard Product — see Section 9)
-4. `nxa_airecommendation`
-5. `nxa_aiactionlog`
-
-Do not create `nxa_customerproduct` at this stage.
+4. `nxa_productholding` (customer product holdings — see Section 17)
+5. `nxa_airecommendation`
+6. `nxa_aiactionlog`
 
 ---
 
@@ -576,25 +575,45 @@ This creates a practical foundation for demonstrating:
 
 ---
 
-# 17. Customer Product Decision
+# 17. Customer Product Holdings
 
-Do **not** create `nxa_customerproduct` initially.
+**Logical name:** `nxa_productholding`
 
-The project should first determine whether the standard Dataverse sales model is sufficient.
+**Status:** Resolved — implemented as a custom table.
 
-Potential standard entities/processes to evaluate include:
+The project evaluated whether the standard Dataverse sales model (Product, Opportunity Product, Quote, Quote Product, Order, Order Product, Invoice, Invoice Product) was sufficient for representing "products currently held by this customer." Since Lead, Opportunity, and Product are themselves custom (`nxa_`) tables in this environment rather than the standard Sales entities, those standard sales-process structures (Quote/Order/Invoice) are not available either — so a custom `nxa_productholding` table was introduced instead, fulfilling the persistent "current holdings" abstraction originally deferred under the working name `nxa_customerproduct`.
 
-- Product
-- Opportunity Product
-- Quote
-- Quote Product
-- Order
-- Order Product
-- Invoice
-- Invoice Product
-- Other applicable standard customer/product structures
+## Fields
 
-If the agent later requires a persistent "products currently held by this customer" abstraction that cannot be represented cleanly with the standard model, then a custom `nxa_customerproduct` table can be introduced.
+| Field | Logical Name | Type | Required |
+|---|---|---|---|
+| Holding Name | `nxa_name` | Text | Yes |
+| Account | `nxa_accountid` | Lookup → Account | No |
+| Contact | `nxa_contactid` | Lookup → Contact | No |
+| Product | `nxa_productid` | Lookup → nxa_product | Yes |
+| Holding Number | `nxa_holdingnumber` | Text | No |
+| Start Date | `nxa_startdate` | Date | No |
+| End Date | `nxa_enddate` | Date | No |
+| Balance | `nxa_balance` | Decimal | No |
+| Interest Rate | `nxa_interestrate` | Decimal | No |
+| Status | `nxa_status` | Choice | Yes |
+
+### Status choices
+
+```text
+Active
+Closed
+Matured
+Suspended
+```
+
+### Design note
+
+A holding can belong to either an Account (organisation) or a Contact (individual) — not necessarily both. This mirrors the AI Recommendation and AI Action Log tables, where not every lookup needs to be populated.
+
+### Role in NexusAI
+
+`nxa_productholding` gives the Customer 360 agent a direct answer to "what products does this customer currently hold," independent of the sales pipeline (Lead → Opportunity) that produced them. It is the join between a customer (Account or Contact) and the product catalogue (`nxa_product`).
 
 ---
 
@@ -665,13 +684,12 @@ If the agent later requires a persistent "products currently held by this custom
 - [ ] Create `nxa_lead` (custom fallback for standard Lead)
 - [ ] Create `nxa_opportunity` (custom fallback for standard Opportunity)
 - [ ] Create `nxa_product` (custom fallback for standard Product)
+- [ ] Create `nxa_productholding` (customer product holdings)
 - [ ] Create `nxa_airecommendation`
 - [ ] Create `nxa_aiactionlog`
 
 ## Deferred
 
-- [ ] Do not create `nxa_customerproduct` yet
-- [ ] Re-evaluate after Customer 360 and agent implementation
 - [ ] Re-evaluate whether standard Lead/Opportunity/Product should replace the `nxa_` custom tables if the Dynamics 365 Sales app is later provisioned in this environment
 
 ---
@@ -687,10 +705,10 @@ The Dataverse foundation is complete when:
 5. `nxa_opportunity` is created and available to the NexusAI solution.
 6. `nxa_product` is created and available to the NexusAI solution.
 7. Standard relationships required by the initial Customer 360 scenario are available.
-8. `nxa_airecommendation` is created.
-9. `nxa_aiactionlog` is created.
-10. No unnecessary duplicate CRM tables have been created.
-11. `nxa_customerproduct` remains deferred.
+8. `nxa_productholding` is created and available to the NexusAI solution.
+9. `nxa_airecommendation` is created.
+10. `nxa_aiactionlog` is created.
+11. No unnecessary duplicate CRM tables have been created.
 12. Changes are source controlled through the NexusAI ADO repository.
 
 ---
