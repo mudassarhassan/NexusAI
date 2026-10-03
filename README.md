@@ -37,7 +37,7 @@ Root Git folder: /dataverse
 ### Dataverse Solution
 
 ```text
-Solution Display Name: NexusAI
+Solution Display Name: NexusAICore
 Publisher: NexusAI
 Publisher Prefix: nxa
 ```
@@ -47,9 +47,11 @@ Custom Dataverse components should therefore use the `nxa_` publisher prefix.
 Examples:
 
 ```text
+nxa_lead
+nxa_opportunity
+nxa_product
 nxa_airecommendation
 nxa_aiactionlog
-nxa_customerproduct
 ```
 
 ### Repository structure
@@ -185,8 +187,8 @@ Do not attempt to implement both workstreams at once. Follow the phases below.
 
 Create/use the Dataverse solution:
 
-**Display Name:** NexusAI  
-**Unique Name:** nexusai  
+**Display Name:** NexusAICore  
+**Unique Name:** NexusAICore  
 **Publisher:** NexusAI  
 **Publisher Prefix:** nxa
 
