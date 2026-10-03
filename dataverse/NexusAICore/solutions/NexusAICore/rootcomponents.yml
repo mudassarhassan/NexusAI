@@ -1,0 +1,14 @@
+RootComponents:
+  RootComponent:
+  - '@type': 1
+    '@schemaName': account
+    '@behavior': 2
+  - '@type': 1
+    '@schemaName': contact
+    '@behavior': 2
+  - '@type': 62
+    '@schemaName': nxa_NexusAI
+    '@behavior': 0
+  - '@type': 80
+    '@schemaName': nxa_NexusAI
+    '@behavior': 0

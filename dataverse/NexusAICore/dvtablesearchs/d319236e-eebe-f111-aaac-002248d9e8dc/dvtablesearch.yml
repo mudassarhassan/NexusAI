@@ -1,0 +1,10 @@
+dvtablesearch:
+  '@dvtablesearchid': d319236e-eebe-f111-aaac-002248d9e8dc
+  appmoduleuniquename: nxa_NexusAI
+  iscustomizable: 1
+  m365appmoduleid:
+    uniquename: nxa_NexusAI
+  name: M365_Primary_model_nxa_NexusAI
+  searchtype: 0
+  statecode: 1
+  statuscode: 2

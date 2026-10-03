@@ -1,0 +1,8 @@
+SolutionComponents:
+  Component:
+  - '@path': /appmodules/nxa_NexusAI
+  - '@path': /appmodulesitemaps/nxa_NexusAI
+  - '@path': /dvtablesearchentities/d419236e-eebe-f111-aaac-002248d9e8dc
+  - '@path': /dvtablesearchentities/d519236e-eebe-f111-aaac-002248d9e8dc
+  - '@path': /dvtablesearchs/d319236e-eebe-f111-aaac-002248d9e8dc
+  - '@path': /publishers/NexusAI
