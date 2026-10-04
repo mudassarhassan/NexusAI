@@ -118,6 +118,12 @@ knowing about if you extend this further:
   comment body (`--outdated`), which is invalid XML (`--` is only legal as
   the comment's closing delimiter) and broke the whole project file parse.
   Fixed by rewording the comment.
+- Interactive sign-in failed with `MsalClientException: ErrorCode:
+  loopback_redirect_uri` — the original `RedirectUri` used an old ADAL-era
+  custom URI scheme (`app://58145b91-...`), but MSAL (which `ServiceClient`
+  uses) only supports loopback redirects (`http://localhost`) for
+  interactive sign-in. Fixed by changing `InteractiveSampleRedirectUri` to
+  `"http://localhost"`, per Microsoft's current OAuth-with-Dataverse docs.
 
 ## What hasn't been verified yet
 
